@@ -1,0 +1,27 @@
+{
+  "name": "cynch",
+  "version": "1.0.0",
+  "description": "Asynchronous synchronization in a cinch. Multi-target file uploading with rsync!",
+  "license": "ISC",
+  "author": {
+    "name": "Paul Marrapese",
+    "email": "paul.marrapese@gmail.com"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/pmarrapese/cynch.git"
+  },
+  "keywords": [
+    "rsync"
+  ],
+  "main": "lib/app.js",
+  "bin": {
+    "cynch": "bin/cynch"
+  },
+  "dependencies": {
+    "co": "^4.6.0",
+    "lodash": "^4.0.0",
+    "q": "^1.4.1",
+    "rsync": "^0.4.0"
+  }
+}
