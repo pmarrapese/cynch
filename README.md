@@ -29,6 +29,8 @@ targets | x | string[] | Target objects (see below)
 exclusions | | string[] | Patterns to exclude from the sync (equivalent to passing `--exclude` options to rsync)
 inclusions | | string[] | Patterns to include in the sync (equivalent to passing `--include` options to rsync)
 rsyncOptions | | string[] | Any additional options to pass to rsync
+watch | | boolean | Start a watch to watch for file changes and trigger sync
+warchOptions | | object | Watcher Options, See [Chokidar](https://www.npmjs.com/package/chokidar)
 debug | | bool | Debug mode
 
 ### Target objects
