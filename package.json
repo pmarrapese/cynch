@@ -14,7 +14,7 @@
   "keywords": [
     "rsync"
   ],
-  "main": "lib/app.js",
+  "main": "lib/App.js",
   "bin": {
     "cynch": "bin/cynch"
   },
