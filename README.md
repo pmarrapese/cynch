@@ -29,6 +29,9 @@ targets | x | string[] | Target objects (see below)
 exclusions | | string[] | Patterns to exclude from the sync (equivalent to passing `--exclude` options to rsync)
 inclusions | | string[] | Patterns to include in the sync (equivalent to passing `--include` options to rsync)
 rsyncOptions | | string[] | Any additional options to pass to rsync
+watch | | boolean | Start a watch to watch for file changes and trigger sync
+watchOptions | | object | Watcher Options, See [Chokidar](https://www.npmjs.com/package/chokidar)
+watchOptions.waitTimeout | | int | Number of milliseconds to wait for all file change events to finish (default: 300)
 debug | | bool | Debug mode
 
 ### Target objects
@@ -66,6 +69,12 @@ debug | | bool | Debug mode
   ]
 }
 ```
+
+## The Watch Mode
+
+The watch mode is a long running process that watches for file changes in your `source` directory. This can be used with any daemon tool (i.e. launchd, systemd) to ease deployment.
+
+
 ##License
 ISC
 
