@@ -33,6 +33,7 @@ watch | | boolean | Start a watch to watch for file changes and trigger sync
 watchOptions | | object | Watcher Options, See [Chokidar](https://www.npmjs.com/package/chokidar)
 watchOptions.waitTimeout | | int | Number of milliseconds to wait for all file change events to finish (default: 300)
 debug | | bool | Debug mode
+growl | | bool | Allow [Growl Notifications](#growl-notifications) (default: true)
 
 ### Target objects
 **Tip:** rsync uses your machine's ssh config; you may substitute full `user@host` strings with an entry from your ssh config. (e.g.: `"host": "mybox"`)
@@ -73,6 +74,31 @@ debug | | bool | Debug mode
 ## The Watch Mode
 
 The watch mode is a long running process that watches for file changes in your `source` directory. This can be used with any daemon tool (i.e. launchd, systemd) to ease deployment.
+
+## Growl Notifications
+
+With growl notifications, you can not get notified when `Cynch` succesffully uploads or errors out. In order for notifications to work you will need to install a notifier library.
+
+### Mac OSX (Darwin)
+
+Install [growlnotify(1)](http://growl.info/extras.php#growlnotify). On OS X 10.8, Notification Center is supported using [terminal-notifier](https://github.com/alloy/terminal-notifier). To install:
+
+```
+  $ sudo gem install terminal-notifier
+```
+
+### Ubuntu (Linux)
+Install notify-send through the [libnotify-bin](http://packages.ubuntu.com/libnotify-bin) package:
+
+```
+  $ sudo apt-get install libnotify-bin
+```
+
+### Windows
+Download and install [Growl for Windows](http://www.growlforwindows.com/gfw/default.aspx)
+
+Download [growlnotify](http://www.growlforwindows.com/gfw/help/growlnotify.aspx) - IMPORTANT : Unpack growlnotify to a folder that is present in your path!
+
 
 
 ##License
