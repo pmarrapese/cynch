@@ -1,6 +1,6 @@
 {
   "name": "cynch",
-  "version": "0.0.1",
+  "version": "0.0.2",
   "description": "Asynchronous synchronization in a cinch. Multi-target file uploading with rsync!",
   "license": "ISC",
   "author": {
