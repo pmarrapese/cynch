@@ -29,11 +29,12 @@ targets | x | string[] | Target objects (see below)
 exclusions | | string[] | Patterns to exclude from the sync (equivalent to passing `--exclude` options to rsync)
 inclusions | | string[] | Patterns to include in the sync (equivalent to passing `--include` options to rsync)
 rsyncOptions | | string[] | Any additional options to pass to rsync
-watch | | boolean | Start a watch to watch for file changes and trigger sync
+watch | | boolean | Enable watch mode, watch for file changes and trigger sync
 watchOptions | | object | Watcher Options, See [Chokidar](https://www.npmjs.com/package/chokidar)
 watchOptions.waitTimeout | | int | Number of milliseconds to wait for all file change events to finish (default: 300)
-debug | | bool | Debug mode
-growl | | bool | Allow [Growl Notifications](#growl-notifications) (default: true)
+watchOptions.path | | string | Path to watch for changes (default: `source` from config file)
+debug | | boolean | Debug mode
+growl | | boolean | Allow [Growl Notifications](#growl-notifications) (default: true)
 
 ### Target objects
 **Tip:** rsync uses your machine's ssh config; you may substitute full `user@host` strings with an entry from your ssh config. (e.g.: `"host": "mybox"`)
@@ -71,9 +72,11 @@ growl | | bool | Allow [Growl Notifications](#growl-notifications) (default: tru
 }
 ```
 
-## The Watch Mode
+## Watch Mode
 
-The watch mode is a long running process that watches for file changes in your `source` directory. This can be used with any daemon tool (i.e. launchd, systemd) to ease deployment.
+If watch mode is enabled, Cynch will function as a long-running process that watches for file changes and synchronizes accordingly (as opposed to exiting immediately once the sync is complete). This can be used with any daemon tool (i.e. launchd, systemd) to ease deployment.
+
+By default, your `source` directory is watched. If this is not preferable, you may specify the watch directory via `watchOptions.path`.
 
 ## Growl Notifications
 
@@ -99,7 +102,12 @@ Download and install [Growl for Windows](http://www.growlforwindows.com/gfw/defa
 
 Download [growlnotify](http://www.growlforwindows.com/gfw/help/growlnotify.aspx) - IMPORTANT : Unpack growlnotify to a folder that is present in your path!
 
+## Special Considerations
+### Windows
+Cynch can be used on Windows using rsync from [Cygwin](https://www.cygwin.com/), however there are some special requirements.
 
+- Cygwin's rsync does not seem to like Windows-style paths (e.g. `c:\src\myProject`); attempting to use them will result in error messages from rsync such as `The source and destination cannot both be remote`. To fix this, use Cygwin-style paths (e.g. `/cygdrive/c/src/myProject`). **HOWEVER...**
+- The file watcher does not like Cygwin-style paths. Therefore, the `watchOptions.path` config option must be set to the respective Windows-style path (e.g. `c:\src\myProject`).
 
 ##License
 ISC
