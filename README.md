@@ -2,7 +2,7 @@
 
 Asynchronous synchronization in a cinch. Multi-target file uploading with rsync!
 
-**Note:** Cynch takes advantage of several ES6 features (promises, generators, arrow functions, etc). You may need to run Node with Harmony flags (or upgrade to a newer version).
+**Note:** Cynch takes advantage of several ES6 features (classes, arrow functions, etc). You may need to run Node with Harmony flags (or upgrade to a newer version).
 
 ## What is this?
 Certain IDEs (I won't name any) have pretty lame remote development support, especially if you have a need to sync with multiple remote environments. Cynch fixes that. Just specify your source and target(s) and you're ready to go.
