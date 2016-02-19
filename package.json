@@ -7,6 +7,8 @@
     "name": "Paul Marrapese",
     "email": "paul.marrapese@gmail.com"
   },
+  "homepage": "https://github.com/pmarrapese/cynch",
+  "bugs": "https://github.com/pmarrapese/cynch/issues",
   "repository": {
     "type": "git",
     "url": "git+https://github.com/pmarrapese/cynch.git"
@@ -22,6 +24,7 @@
     "chokidar": "^1.4.2",
     "growl": "^1.8.1",
     "lodash": "^4.0.0",
-    "rsync": "^0.4.0"
+    "rsync": "^0.4.0",
+    "yargs": "^4.1.0"
   }
 }
