@@ -25,7 +25,7 @@ The following are possible configuration values.
 Name | Required? | Type | Description
 ---- | --------- | ---- | -----------
 source | x | string | Source directory to sync. May be relative to the configuration path.
-targets | x | string[] | Target objects (see below)
+targets | x | object[] | Target objects (see below)
 exclusions | | string[] | Patterns to exclude from the sync (equivalent to passing `--exclude` options to rsync)
 inclusions | | string[] | Patterns to include in the sync (equivalent to passing `--include` options to rsync)
 rsyncOptions | | string[] | Any additional options to pass to rsync

@@ -21,6 +21,7 @@
     "cynch": "bin/cynch"
   },
   "dependencies": {
+    "@pmarrapese/node-boilerplate": "git+https://github.com/pmarrapese/node-boilerplate.git#0.0.3",
     "chokidar": "^1.4.2",
     "growl": "^1.8.1",
     "lodash": "^4.0.0",
